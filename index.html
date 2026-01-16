@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZK | Full Stack & Cybersecurity Professional</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "var(--primary-color)",
+              "background-light": "#F0FDF4", 
+              "background-dark": "#020617",
+            },
+            fontFamily: {
+              display: ["Outfit", "sans-serif"],
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            borderRadius: {
+              DEFAULT: "1.5rem",
+              '2xl': '2rem',
+              '3xl': '2.5rem',
+            },
+            animation: {
+              'float': 'float 8s ease-in-out infinite',
+              'float-delayed': 'float 12s ease-in-out infinite 2s',
+              'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'scan': 'scan 4s linear infinite',
+              'liquid': 'liquid 20s ease-in-out infinite',
+              'glow': 'glow 4s ease-in-out infinite',
+              'led-flow': 'led-flow 3s linear infinite',
+              'liquid-toolbar': 'liquid-toolbar 6s ease-in-out infinite',
+              'liquid-motion': 'liquid-motion 12s linear infinite',
+              'fade-in': 'fade-in 0.8s ease-out forwards',
+              'slide-in-left': 'slide-in-left 0.8s ease-out forwards',
+              'slide-in-right': 'slide-in-right 0.8s ease-out forwards',
+              'slide-in-bottom': 'slide-in-bottom 0.8s ease-out forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translate3d(0, 0, 0) rotate(0deg)' },
+                '33%': { transform: 'translate3d(0, -15px, 0) rotate(1deg)' },
+                '66%': { transform: 'translate3d(0, 5px, 0) rotate(-1deg)' },
+              },
+              'led-flow': {
+                '0%': { 'background-position': '0% 50%' },
+                '100%': { 'background-position': '200% 50%' },
+              },
+              'liquid-toolbar': {
+                '0%, 100%': { transform: 'translate3d(-50%, 0, 0) scale(1)' },
+                '50%': { transform: 'translate3d(-50%, -8px, 0) scale(1.02)' },
+              },
+              'liquid-motion': {
+                '0%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
+                '100%': { 'background-position': '0% 50%' },
+              },
+              'fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              'slide-in-left': {
+                '0%': { opacity: '0', transform: 'translate3d(-50px, 0, 0)' },
+                '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+              },
+              'slide-in-right': {
+                '0%': { opacity: '0', transform: 'translate3d(50px, 0, 0)' },
+                '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+              },
+              'slide-in-bottom': {
+                '0%': { opacity: '0', transform: 'translate3d(0, 50px, 0)' },
+                '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+        :root {
+            --primary-color: #10B981;
+            --liquid-color: rgba(16, 185, 129, 0.05);
+        }
+
+        .dark {
+            --primary-color: #22C55E;
+            --liquid-color: rgba(34, 197, 94, 0.1);
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-y: scroll;
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .animate-float, .animate-float-delayed, .liquid-glass-toolbar, .floating-blob {
+            will-change: transform, opacity;
+        }
+
+        h1, h2, .section-heading {
+            animation: headingColorCycle 6s infinite ease-in-out !important;
+            transition: color 1.5s ease-in-out;
+        }
+
+        @keyframes headingColorCycle {
+            0%, 100% { color: var(--primary-color); }
+            25% { color: #34D399; } 
+            50% { color: #059669; } 
+            75% { color: #10B981; } 
+        }
+
+        .liquid-glass-toolbar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1.5px solid rgba(16, 185, 129, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            animation: liquid-toolbar 6s ease-in-out infinite;
+            z-index: 100;
+            overflow: hidden;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), background 0.3s ease;
+        }
+
+        .dark .liquid-glass-toolbar {
+            background: rgba(6, 15, 12, 0.6);
+            border: 1.5px solid rgba(34, 197, 94, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .liquid-glass-toolbar::before {
+            content: '';
+            position: absolute;
+            inset: -100%;
+            background: radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.15), transparent 70%);
+            background-size: 200% 200%;
+            animation: liquid-motion 12s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        .toolbar-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem;
+            border-radius: 999px;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        .toolbar-btn:hover {
+            transform: translate3d(0, -4px, 0) scale(1.1);
+        }
+
+        .toolbar-btn.active {
+            background: var(--primary-color);
+            transform: translate3d(0, -2px, 0) scale(1.05);
+            box-shadow: 0 8px 20px -4px var(--primary-color);
+        }
+
+        .led-border {
+            position: relative;
+            z-index: 10;
+            background: rgba(0,0,0,0.8);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .dark .led-border { background: rgba(2, 6, 23, 0.9); }
+        
+        .led-border::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: linear-gradient(90deg, #059669, #10B981, #34D399, #6EE7B7, #059669);
+            background-size: 200% 100%;
+            z-index: -1;
+            animation: led-flow 3s linear infinite;
+            border-radius: inherit;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), border 0.3s ease;
+        }
+        
+        .dark .glass {
+            background: rgba(6, 15, 12, 0.4);
+            border: 1px solid rgba(34, 197, 94, 0.1);
+        }
+
+        .light .glass {
+            background: rgba(240, 253, 244, 0.8); 
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card-liquid-hover:hover {
+            transform: translate3d(0, -8px, 0);
+            box-shadow: 0 20px 40px -10px var(--liquid-color);
+        }
+
+        .liquid-space-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(5, 150, 105, 0.08) 0%, transparent 40%);
+            background-size: 200% 200%;
+            animation: liquid-drift 20s infinite alternate ease-in-out;
+            will-change: background-position;
+        }
+
+        .floating-blob {
+            animation: blob-move 25s infinite ease-in-out;
+            mix-blend-mode: plus-lighter;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-black dark:text-slate-100 transition-colors duration-700 overflow-x-hidden font-sans">
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none liquid-space-bg">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 dark:from-slate-950 dark:via-background-dark dark:to-slate-900"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[60rem] h-[60rem] rounded-full bg-primary opacity-5 dark:opacity-20 blur-[160px] floating-blob"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50rem] h-[50rem] rounded-full bg-emerald-600 opacity-5 dark:opacity-15 blur-[140px] floating-blob" style="animation-delay: -10s"></div>
+    </div>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
